@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        /* Custom styles for particle effect and tree-themed projects */
+        #particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .tree-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .tree-node {
+            position: relative;
+            background: #1F2937;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .tree-node:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 10px 20px rgba(96, 165, 250, 0.5);
+        }
+        .tree-branch {
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, #60A5FA, transparent);
+            transform-origin: top;
+        }
+        .tree-branch-left {
+            left: 10%;
+            height: 50px;
+            transform: rotate(-45deg);
+        }
+        .tree-branch-right {
+            right: 10%;
+            height: 50px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+    <!-- Header Section -->
+    <header class="bg-gray-900 sticky top-0 z-50 shadow-lg transition-all duration-300 hover:bg-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-500">My Portfolio</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-blue-400 transition-colors duration-300 text-lg">Home</a></li>
+                    <li><a href="#about" class="hover:text-blue-400 transition-colors duration-300 text-lg">About</a></li>
+                    <li><a href="#skills" class="hover:text-blue-400 transition-colors duration-300 text-lg">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-blue-400 transition-colors duration-300 text-lg">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400 transition-colors duration-300 text-lg">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center bg-gradient-to-br from-blue-700 via-purple-700 to-pink-600 relative overflow-hidden">
+        <div id="particles"></div>
+        <div class="container mx-auto px-4 text-center z-10">
+            <h2 class="text-5xl md:text-7xl font-extrabold mb-4 animate-hero-title bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-300">I'm Gangala Sai Dinesh Reddy</h2>
+            <p class="text-xl md:text-3xl text-gray-200 mb-6 animate-hero-text"></p>
+            <a href="#projects" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-600 transition-all duration-300 animate-hero-button shadow-lg">Explore My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-section bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-500">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3 animate-section" style="animation-delay: 0.2s;">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-blue-500/30">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-300">My Journey</h3>
+                        <p class="text-gray-300">
+                            I'm a self-taught developer with a background in [Your Background, e.g., computer science, design]. My passion for coding started with building small apps, and I've since grown into creating complex, scalable web applications.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-2/3 animate-section" style="animation-delay: 0.4s;">
+                    <p class="text-lg text-gray-300">
+                        I’m a Full-Stack Developer proficient in HTML, CSS, JavaScript, and React.js, with a sharp eye for UI/UX design and a strong understanding of SEO optimization. On the backend, I work with Node.js, Express.js, and MongoDB, allowing me to build robust, scalable, and secure web applications from end to end.
+
+                        I specialize in developing user-focused, performance-driven solutions that not only look great but also deliver smooth and reliable functionality across all devices. My design skills are powered by Figma, enabling me to craft intuitive and visually appealing interfaces.
+
+                        I'm also deeply passionate about AI tools and prompt engineering, always exploring how emerging technologies can enhance development workflows and elevate user experiences.
+
+                        Whether it's coding, designing, or optimizing, I love blending creativity with technology to solve real-world problems.
+                        When I’m not developing, you’ll find me exploring new tech, gaming, or playing cricket.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-950">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-section bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-500">My Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-gray-800 p-4 rounded-lg text-center transform transition-transform duration-300 animate-skill border border-blue-500/30" style="animation-delay: 0.1s;">
+                    <h3 class="text-lg font-semibold text-blue-300">HTML & CSS</h3>
+                    <p class="text-gray-400">Building responsive and accessible layouts.</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center transform transition-transform duration-300 animate-skill border border-blue-500/30" style="animation-delay: 0.2s;">
+                    <h3 class="text-lg font-semibold text-blue-300">JavaScript</h3>
+                    <p class="text-gray-400">Creating dynamic and interactive features.</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center transform transition-transform duration-300 animate-skill border border-blue-500/30" style="animation-delay: 0.3s;">
+                    <h3 class="text-lg font-semibold text-blue-300">React</h3>
+                    <p class="text-gray-400">Developing modern single-page applications.</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center transform transition-transform duration-300 animate-skill border border-blue-500/30" style="animation-delay: 0.4s;">
+                    <h3 class="text-lg font-semibold text-blue-300">Node.js</h3>
+                    <p class="text-gray-400">Building scalable backend APIs.</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center transform transition-transform duration-300 animate-skill border border-blue-500/30" style="animation-delay: 0.2s;">
+                    <h3 class="text-lg font-semibold text-blue-300">UI/UX</h3>
+                    <p class="text-gray-400">Creating prototype of a website and designing</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center transform transition-transform duration-300 animate-skill border border-blue-500/30" style="animation-delay: 0.2s;">
+                    <h3 class="text-lg font-semibold text-blue-300">MangoDB</h3>
+                    <p class="text-gray-400">Storing data</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center transform transition-transform duration-300 animate-skill border border-blue-500/30" style="animation-delay: 0.2s;">
+                    <h3 class="text-lg font-semibold text-blue-300">AI tools and prompt engineering</h3>
+                    <p class="text-gray-400">creating website and also developing projects end to end with ai tools</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center transform transition-transform duration-300 animate-skill border border-blue-500/30" style="animation-delay: 0.2s;">
+                    <h3 class="text-lg font-semibold text-blue-300">SEO optimization</h3>
+                    <p class="text-gray-400">Optimized websites for fast, responsive, accessible, and search engine visibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (Tree Theme) -->
+    <section id="projects" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-section bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-500">Featured Projects</h2>
+            <div class="tree-container">
+                <div class="tree-node animate-project" style="animation-delay: 0.1s;">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">E-Commerce Platform</h3>
+                    <p class="text-gray-400">A full-stack e-commerce site with real-time cart updates, built using React, Node.js, and MongoDB. Features include user authentication and payment integration.</p>
+                    <a href="#" class="text-blue-400 hover:underline">View Project</a>
+                    <div class="tree-branch tree-branch-left"></div>
+                    <div class="tree-branch tree-branch-right"></div>
+                </div>
+                <div class="tree-node animate-project" style="animation-delay: 0.2s;">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">Task Manager</h3>
+                    <p class="text-gray-400">A collaborative task management app with real-time updates using WebSocket and React. Includes drag-and-drop functionality and notifications.</p>
+                    <a href="#" class="text-blue-400 hover:underline">View Project</a>
+                    <div class="tree-branch tree-branch-left"></div>
+                    <div class="tree-branch tree-branch-right"></div>
+                </div>
+                <div class="tree-node animate-project" style="animation-delay: 0.3s;">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">Personal Blog</h3>
+                    <p class="text-gray-400">A custom CMS-powered blog with dynamic content loading, built with Next.js and Tailwind CSS. Features SEO optimization and markdown support.</p>
+                    <a href="#" class="text-blue-400 hover:underline">View Project</a>
+                    <div class="tree-branch tree-branch-left"></div>
+                    <div class="tree-branch tree-branch-right"></div>
+                </div>
+                <div class="tree-node animate-project" style="animation-delay: 0.4s;">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">Portfolio Site</h3>
+                    <p class="text-gray-400">This very portfolio! A dynamic, animated site showcasing my skills and projects, built with HTML, Tailwind CSS, and GSAP.</p>
+                    <a href="#" class="text-blue-400 hover:underline">View Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Details Section -->
+    <section id="contact" class="py-20 bg-gray-950">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-section bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-500">Contact Details</h2>
+            <div class="max-w-lg mx-auto bg-gray-800 p-8 rounded-lg shadow-xl border border-blue-500/30">
+                <div class="flex flex-col space-y-6">
+                    <div class="flex items-center space-x-4 animate-contact-item" style="animation-delay: 0.1s;">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9-6 9 6v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"></path></svg>
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-300">Email</h3>
+                            <p class="text-gray-400">gangalasaidineshreddy@gmail.com</p>
+                        </div>
+                    </div>
+                    <!-- <div class="flex items-center space-x-4 animate-contact-item" style="animation-delay: 0.2s;">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28l2.72 2.72M12 21v-7m-4.72 4.28L5 15m0 0l2.28-2.28M19 15l-2.28 2.28M12 7v7m4.72-4.28L19 7m-2.28 2.28L12 12m0 0l-4.72-2.72M5 15l2.28 2.28"></path></svg>
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-300">Phone</h3>
+                            <p class="text-gray-400">[Your Phone, e.g., +1-555-123-4567]</p>
+                        </div>
+                    </div> -->
+                    <div class="flex items-center space-x-4 animate-contact-item" style="animation-delay: 0.3s;">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-300">Social Media</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/saidineshreddy8978" class="text-blue-400 hover:underline">GitHub</a>
+                                <a href="https://www.linkedin.com/in/gangala-sai-dinesh-reddy-08a588287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-blue-400 hover:underline">LinkedIn</a>
+                                <!-- <a href="[Your Twitter URL]" class="text-blue-400 hover:underline">Twitter</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2025 [Your Name]. Built with passion and code.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Particle effect for hero section
+        const particleContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.width = `${Math.random() * 5 + 2}px`;
+            particle.style.height = particle.style.width;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particleContainer.appendChild(particle);
+            gsap.to(particle, {
+                y: Math.random() * 100 - 50,
+                x: Math.random() * 100 - 50,
+                opacity: Math.random() * 0.5 + 0.2,
+                duration: 3 + Math.random() * 3,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+        }
+
+        // Hero section animations
+        gsap.from(".animate-hero-title", {
+            y: -100,
+            scale: 0.5,
+            opacity: 0,
+            duration: 2,
+            ease: "power4.out"
+        });
+        // Typing effect for hero text with glow
+        const heroText = "A passionate developer building innovative and user-focused solutions.";
+        const heroTextElement = document.querySelector('.animate-hero-text');
+        heroText.split('').forEach((char, i) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.style.opacity = 0;
+            span.style.display = 'inline-block';
+            heroTextElement.appendChild(span);
+            gsap.to(span, {
+                opacity: 1,
+                y: 0,
+                duration: 0.1,
+                delay: i * 0.03,
+                ease: "power2.in",
+                onStart: () => {
+                    gsap.to(span, {
+                        textShadow: "0 0 10px rgba(96, 165, 250, 0.8)",
+                        duration: 0.5,
+                        yoyo: true,
+                        repeat: 1
+                    });
+                }
+            });
+        });
+        gsap.from(".animate-hero-button", {
+            scale: 0,
+            opacity: 0,
+            duration: 1.5,
+            delay: 2,
+            ease: "elastic.out(1, 0.3)"
+        });
+
+        // Section animations with zoom-in effect
+        gsap.utils.toArray(".animate-section").forEach((element) => {
+            gsap.from(element, {
+                scale: 0.9,
+                opacity: 0,
+                duration: 1.2,
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // Skill animations with 3D flip
+        gsap.utils.toArray(".animate-skill").forEach((element) => {
+            gsap.from(element, {
+                rotationX: 90,
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // Project animations with grow effect
+        gsap.utils.toArray(".animate-project").forEach((element, index) => {
+            gsap.from(element, {
+                scale: 0.7,
+                opacity: 0,
+                duration: 1.2,
+                ease: "back.out(1.7)",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+            // Animate branches
+            const branches = element.querySelectorAll('.tree-branch');
+            branches.forEach((branch, i) => {
+                gsap.from(branch, {
+                    height: 0,
+                    opacity: 0,
+                    duration: 1,
+                    delay: index * 0.2 + 0.5,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                });
+            });
+        });
+
+        // Contact item animations with bounce
+        gsap.utils.toArray(".animate-contact-item").forEach((element) => {
+            gsap.from(element, {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "bounce.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // 3D hover animations for skills and projects
+        document.querySelectorAll('.animate-skill, .animate-project').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                gsap.to(element, {
+                    scale: 1.1,
+                    rotationX: 10,
+                    rotationY: 10,
+                    boxShadow: "0 10px 20px rgba(96, 165, 250, 0.5)",
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
+            });
+            element.addEventListener('mouseleave', () => {
+                gsap.to(element, {
+                    scale: 1,
+                    rotationX: 0,
+                    rotationY: 0,
+                    boxShadow: "0 0 0 rgba(0, 0, 0, 0)",
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
